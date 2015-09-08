@@ -1,0 +1,13 @@
+C:\Users\Ricardo\Source\Repos\ParadigmaPasoMensajes\FilosofosComensales\obj\Debug\FilosofosComensales.csprojResolveAssemblyReference.cache
+C:\Users\Ricardo\Source\Repos\ParadigmaPasoMensajes\FilosofosComensales\bin\Debug\ParadigmaPasoMensajes.FilosofosComensales.exe.config
+C:\Users\Ricardo\Source\Repos\ParadigmaPasoMensajes\FilosofosComensales\bin\Debug\ParadigmaPasoMensajes.FilosofosComensales.exe
+C:\Users\Ricardo\Source\Repos\ParadigmaPasoMensajes\FilosofosComensales\bin\Debug\ParadigmaPasoMensajes.FilosofosComensales.pdb
+C:\Users\Ricardo\Source\Repos\ParadigmaPasoMensajes\FilosofosComensales\obj\Debug\ParadigmaPasoMensajes.FilosofosComensales.exe
+C:\Users\Ricardo\Source\Repos\ParadigmaPasoMensajes\FilosofosComensales\obj\Debug\ParadigmaPasoMensajes.FilosofosComensales.pdb
+C:\Users\Ricardo\Source\Repos\ParadigmaPasoMensajes\FilosofosComensales\bin\Debug\PasoMensajes.FilosofosComensales.exe.config
+C:\Users\Ricardo\Source\Repos\PasoMensajes\FilosofosComensales\bin\Debug\PasoMensajes.FilosofosComensales.exe.config
+C:\Users\Ricardo\Source\Repos\PasoMensajes\FilosofosComensales\bin\Debug\PasoMensajes.FilosofosComensales.exe
+C:\Users\Ricardo\Source\Repos\PasoMensajes\FilosofosComensales\bin\Debug\PasoMensajes.FilosofosComensales.pdb
+C:\Users\Ricardo\Source\Repos\PasoMensajes\FilosofosComensales\obj\Debug\FilosofosComensales.csprojResolveAssemblyReference.cache
+C:\Users\Ricardo\Source\Repos\PasoMensajes\FilosofosComensales\obj\Debug\PasoMensajes.FilosofosComensales.exe
+C:\Users\Ricardo\Source\Repos\PasoMensajes\FilosofosComensales\obj\Debug\PasoMensajes.FilosofosComensales.pdb
