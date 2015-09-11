@@ -29,6 +29,19 @@ namespace PasoMensajes.FilosofosComensales
 			Argumentos proceso = (Argumentos)sender;
 
 			lbConsola.Items.Add("Filosofo " +  proceso.IdProceso + ": " + proceso.Estado);
+
+			switch (proceso.Estado)
+			{
+				case Filosofo.Estado.Pensando:
+					//Cambiar imagen a color amarillo
+					break;
+				case Filosofo.Estado.Esperando:
+					//Cambiar imagen a color rojo
+					break;
+				case Filosofo.Estado.Comiendo:
+					//Cambiar imagen a color verde
+					break;
+			}
 		}
 	}
 }

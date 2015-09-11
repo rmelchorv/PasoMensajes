@@ -31,7 +31,6 @@ namespace PasoMensajes.FilosofosComensales
 
 		public void Iniciar()
 		{
-			EventHandler handler = ManejadorEstado;
 			Random aleatorio = new Random();
 			int tiempoMaxPensar = int.Parse(ConfigurationManager.AppSettings["TiempoMaxSegPensar"]) * 1000;
 			int tiempoMaxComer = int.Parse(ConfigurationManager.AppSettings["TiempoMaxSegComer"]) * 1000;
@@ -42,19 +41,19 @@ namespace PasoMensajes.FilosofosComensales
 				try
 				{
 					
-					if (handler != null)
-						handler(new Argumentos() { Estado = Estado.Pensando, IdProceso = id }, new EventArgs());
+					if (ManejadorEstado != null)
+						ManejadorEstado(new Argumentos() { Estado = Estado.Pensando, IdProceso = id }, new EventArgs());
 
 					tiempo = aleatorio.Next(1000, tiempoMaxPensar);
 					Thread.Sleep(tiempo);
 
-					if (handler != null)
-						handler(new Argumentos() { Estado = Estado.Esperando, IdProceso = id }, new EventArgs());
+					if (ManejadorEstado != null)
+						ManejadorEstado(new Argumentos() { Estado = Estado.Esperando, IdProceso = id }, new EventArgs());
 
 					tenedores.Obtener(izquierda, derecha);
 					
-					if (handler != null)
-						handler(new Argumentos() { Estado = Estado.Comiendo, IdProceso = id }, new EventArgs());
+					if (ManejadorEstado != null)
+						ManejadorEstado(new Argumentos() { Estado = Estado.Comiendo, IdProceso = id }, new EventArgs());
 
 					tiempo = aleatorio.Next(1000, tiempoMaxComer);
 					Thread.Sleep(tiempo);
