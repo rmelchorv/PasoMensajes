@@ -10,13 +10,16 @@ namespace PasoMensajes.FilosofosComensales
 		int izquierda;
 		int id;
 		Tenedores tenedores;
+		internal event EventHandler ManejadorEstado;
+		internal enum Estado { Pensando, Esperando, Comiendo };
 
-		public Filosofo(int id, Tenedores tenedores)
+		public Filosofo(int id, Tenedores tenedores, EventHandler manejadorEstado)
 		{
 			int numFilosofos = int.Parse(ConfigurationManager.AppSettings["NumFilosofos"]);
 
 			this.tenedores = tenedores;
 			this.id = id;
+			ManejadorEstado = manejadorEstado;
 			izquierda = id == 0 ? numFilosofos - 1 : id - 1;
 			derecha = id;
 			
@@ -28,6 +31,7 @@ namespace PasoMensajes.FilosofosComensales
 
 		public void Iniciar()
 		{
+			EventHandler handler = ManejadorEstado;
 			Random aleatorio = new Random();
 			int tiempoMaxPensar = int.Parse(ConfigurationManager.AppSettings["TiempoMaxSegPensar"]) * 1000;
 			int tiempoMaxComer = int.Parse(ConfigurationManager.AppSettings["TiempoMaxSegComer"]) * 1000;
@@ -37,16 +41,24 @@ namespace PasoMensajes.FilosofosComensales
 			{
 				try
 				{
-					Console.WriteLine("Filósofo " + id + " pensando...");
+					
+					if (handler != null)
+						handler(new Argumentos() { Estado = Estado.Pensando, IdProceso = id }, new EventArgs());
+
 					tiempo = aleatorio.Next(1000, tiempoMaxPensar);
 					Thread.Sleep(tiempo);
-					Console.WriteLine("Filósofo " + id + " tiene hambre. Esperando...");
+
+					if (handler != null)
+						handler(new Argumentos() { Estado = Estado.Esperando, IdProceso = id }, new EventArgs());
+
 					tenedores.Obtener(izquierda, derecha);
-					Console.WriteLine("Filósofo " + id + " comiendo...");
+					
+					if (handler != null)
+						handler(new Argumentos() { Estado = Estado.Comiendo, IdProceso = id }, new EventArgs());
+
 					tiempo = aleatorio.Next(1000, tiempoMaxComer);
 					Thread.Sleep(tiempo);
 					tenedores.Liberar(izquierda, derecha);
-					Console.WriteLine("Filósofo " + id + " terminó de comer.");
 				}
 				catch(Exception e)
 				{
